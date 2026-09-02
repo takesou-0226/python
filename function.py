@@ -25,3 +25,20 @@ def logistic_predict(X, w, b):
 def ReLU(x):
     return np.maximum(0, x)
 
+def softmax(x):
+    return np.exp(x) / sum(np.exp(x))
+
+X = np.array([
+    [0, 0],
+    [0, 1],
+    [1, 0],
+    [1, 1]
+])
+
+y = np.array([0, 0, 0, 1])
+
+w = [0, 0]
+b = 0.0
+
+ans, y_prob = logistic_predict(X, w, b)
+print(ans, y_prob)
